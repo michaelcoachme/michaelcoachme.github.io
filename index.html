@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael.CoachME | Transform Into The Man You Were Built To Be</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111318;
+    --card-bg: #161a22;
+    --gold: #C8943A;
+    --gold-light: #E8B96A;
+    --gold-dim: #7a5820;
+    --white: #f5f1eb;
+    --muted: #8a8a8a;
+    --border: rgba(200,148,58,0.2);
+    --radius: 4px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--white); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    font-size: 0.8rem !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 7rem 2.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--gold);
+  }
+  .hero-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-sub strong { color: var(--white); }
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1rem 2.25rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 1rem 2.25rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-visual {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 380px;
+  }
+  .hero-card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+  .hero-card-title {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .credential {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .cred-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(200,148,58,0.15);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 0.9rem;
+  }
+  .cred-text { font-size: 0.85rem; color: var(--white); line-height: 1.4; }
+  .cred-label { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+  .hero-bg-text {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22vw;
+    color: rgba(200,148,58,0.03);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 2.5rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block; width: 24px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+  }
+  .section-title em { font-style: normal; color: var(--gold); }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 580px;
+  }
+
+  /* PROBLEM SECTION */
+  #problem { background: var(--dark); }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .problem-card {
+    background: var(--black);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.75rem;
+  }
+  .problem-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: rgba(200,148,58,0.2);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .problem-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .problem-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  /* ABOUT */
+  #about { background: var(--black); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+  .about-left {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+  }
+  .about-initials {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(200,148,58,0.15);
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .about-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+  .about-role { font-size: 0.8rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .badge-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .badge {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--white);
+  }
+  .badge::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 0.5rem;
+    flex-shrink: 0;
+  }
+  .about-right p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .about-right p strong { color: var(--white); }
+  .about-quote {
+    background: var(--card-bg);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .about-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* PROGRAMS */
+  #programs { background: var(--dark); }
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .program-card {
+    background: var(--black);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+    display: flex; flex-direction: column;
+    position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .program-card:hover { transform: translateY(-4px); border-color: rgba(200,148,58,0.5); }
+  .program-featured {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, #161a22 0%, #1a1a0f 100%);
+  }
+  .featured-tag {
+    position: absolute;
+    top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .program-duration {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .program-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .program-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .program-price span { font-size: 1rem; color: var(--muted); }
+  .program-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 1rem 0 1.5rem;
+    flex-grow: 1;
+  }
+  .program-features { list-style: none; margin-bottom: 1.75rem; }
+  .program-features li {
+    font-size: 0.85rem;
+    color: var(--white);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .program-features li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  /* TRANSFORMATION */
+  #transformation { background: var(--black); }
+  .transform-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .transform-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.75rem;
+    text-align: center;
+  }
+  .transform-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .transform-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .transform-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--dark); }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testi-card {
+    background: var(--black);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.75rem;
+  }
+  .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
+  .testi-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.95rem;
+    color: var(--white);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .testi-author { font-size: 0.8rem; color: var(--muted); }
+  .testi-author strong { color: var(--gold); display: block; font-style: normal; font-family: 'DM Sans', sans-serif; }
+
+  /* BOOKING FUNNEL */
+  #booking { background: var(--black); }
+  .booking-wrapper {
+    max-width: 680px;
+    margin: 3rem auto 0;
+  }
+  .steps-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2.5rem;
+  }
+  .step-item {
+    display: flex; flex-direction: column; align-items: center;
+    flex: 1; position: relative;
+  }
+  .step-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 16px; left: 50%;
+    width: 100%; height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .step-circle {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    z-index: 1;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .step-circle.active { background: var(--gold); border-color: var(--gold); color: var(--black); }
+  .step-circle.done { background: rgba(200,148,58,0.2); border-color: var(--gold); color: var(--gold); }
+  .step-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+  .funnel-step {
+    display: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2.5rem;
+  }
+  .funnel-step.active { display: block; }
+  .funnel-step h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .funnel-step p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--black);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--dark); }
+  .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+  .radio-option {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: var(--black);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .radio-option:hover { border-color: var(--gold); }
+  .radio-option input { accent-color: var(--gold); width: 16px; height: 16px; cursor: pointer; }
+  .radio-option-label { font-size: 0.9rem; color: var(--white); }
+  .radio-option-price { font-size: 0.8rem; color: var(--gold); margin-left: auto; font-weight: 600; }
+  .confirm-box {
+    background: rgba(200,148,58,0.08);
+    border: 1px solid rgba(200,148,58,0.3);
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .confirm-box h3 { font-size: 1rem; color: var(--gold); margin-bottom: 0.75rem; }
+  .confirm-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 0.3rem 0; color: var(--muted); }
+  .confirm-row span:last-child { color: var(--white); font-weight: 500; }
+  .success-box {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .success-box h2 { color: var(--gold); margin-bottom: 0.75rem; }
+  .success-box p { color: var(--muted); font-size: 0.9rem; max-width: 400px; margin: 0 auto 1.5rem; }
+
+  /* FAQ */
+  #faq { background: var(--dark); }
+  .faq-list { margin-top: 3rem; max-width: 720px; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 0;
+    cursor: pointer;
+  }
+  .faq-question {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .faq-toggle {
+    font-size: 1.2rem;
+    color: var(--gold);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .faq-answer {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s;
+  }
+  .faq-item.open .faq-answer { max-height: 200px; padding-top: 0.75rem; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  /* CTA BANNER */
+  #cta-banner {
+    background: linear-gradient(135deg, #1a1200 0%, #0a0a0a 50%, #0a1a0a 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    padding: 5rem 2.5rem;
+  }
+  #cta-banner .section-title { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+  #cta-banner .section-sub { margin: 1rem auto 2.5rem; text-align: center; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 3rem 2.5rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .footer-logo span { color: var(--white); }
+  footer p { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.25rem; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.25rem 0; }
+  .footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* POPUP */
+  .popup-overlay {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0,0,0,0.85);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden;
+    transition: all 0.3s;
+  }
+  .popup-overlay.show { opacity: 1; visibility: visible; }
+  .popup-box {
+    background: var(--card-bg);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 2.5rem;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+  }
+  .popup-overlay.show .popup-box { transform: scale(1); }
+  .popup-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: none; border: none;
+    color: var(--muted); font-size: 1.25rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .popup-close:hover { color: var(--white); }
+  .popup-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .popup-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+  .popup-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
+  .popup-input-row { display: flex; gap: 0.75rem; }
+  .popup-input-row input {
+    flex: 1;
+    background: var(--black);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+  }
+  .popup-input-row input:focus { border-color: var(--gold); }
+  .popup-input-row button {
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .popup-input-row button:hover { background: var(--gold-light); }
+  .popup-disclaimer { font-size: 0.72rem; color: var(--muted); margin-top: 0.75rem; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-visual { display: none; }
+    .problem-grid, .programs-grid, .testi-grid { grid-template-columns: 1fr; }
+    .transform-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    nav { padding: 1rem 1.25rem; }
+    section { padding: 3.5rem 1.25rem; }
+    #hero { padding: 6rem 1.25rem 3rem; }
+    .popup-input-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">Michael.<span>CoachME</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#transformation">Results</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#booking" class="nav-cta">Book Free Call</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text">ME</div>
+  <div class="hero-grid" style="position:relative;z-index:1;">
+    <div>
+      <div class="hero-tag">San Tan Valley, AZ · Life Coaching for Men</div>
+      <h1 class="hero-headline">
+        Stop<br>Shrinking.<br>
+        Start<br><em>Leading.</em>
+      </h1>
+      <p class="hero-sub">
+        You already know something has to change. You're done being invisible, unsure, and stuck. <strong>Michael Evangelista</strong> — martial arts instructor, professional coach — will build you from the inside out.
+      </p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-primary">Book Your Free Strategy Call</a>
+        <a href="#programs" class="btn-outline">See Programs</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-name">Michael Evangelista</div>
+        <div class="hero-card-title">Certified Life Coach · Martial Arts Instructor</div>
+        <div class="credential">
+          <div class="cred-icon">🥋</div>
+          <div>
+            <div class="cred-text">Martial Arts School Owner</div>
+            <div class="cred-label">San Tan Valley, AZ</div>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="cred-icon">💼</div>
+          <div>
+            <div class="cred-text">Professional Leadership Coach</div>
+            <div class="cred-label">Managed & developed teams</div>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="cred-icon">🎯</div>
+          <div>
+            <div class="cred-text">Specializes in Men Ages 21–40</div>
+            <div class="cred-label">Confidence · Purpose · Identity</div>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="cred-icon">⚡</div>
+          <div>
+            <div class="cred-text">Proven Results-Based System</div>
+            <div class="cred-label">Physical + mental transformation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="section-inner">
+    <div class="section-label">You're Not Alone</div>
+    <h2 class="section-title">Does Any Of <em>This Sound Like You?</em></h2>
+    <p class="section-sub">Most men I work with are dealing with the same invisible weight. It keeps them playing small — in every area of life.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-num">01</div>
+        <h3>You avoid social situations</h3>
+        <p>Parties, groups, networking events — they trigger anxiety. You rehearse conversations in your head but freeze when it's time to speak.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">02</div>
+        <h3>You've been single too long</h3>
+        <p>Not because you're not a great guy — but because you don't know how to put yourself out there. Rejection terrifies you more than loneliness.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">03</div>
+        <h3>You hold back at work</h3>
+        <p>You have ideas. You have skills. But you don't speak up, you get overlooked, and you watch others advance while you stay stuck.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">04</div>
+        <h3>Your body doesn't match your identity</h3>
+        <p>You know physical strength builds mental strength. But without accountability and direction, it never seems to stick.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">05</div>
+        <h3>You feel invisible</h3>
+        <p>People don't take you seriously. You don't command respect in rooms. You want presence — but you don't know how to build it.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">06</div>
+        <h3>You're tired of just surviving</h3>
+        <p>Wake up. Go through motions. Sleep. Repeat. There's a version of you that actually enjoys life — but he feels very far away right now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Your Coach</div>
+    <h2 class="section-title">Built By <em>Experience,</em><br>Not Just Credentials</h2>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-initials">ME</div>
+        <div class="about-name">Michael Evangelista</div>
+        <div class="about-role">Life Coach · Martial Artist · Leader</div>
+        <div class="badge-list">
+          <div class="badge">Martial Arts School Owner — San Tan Valley, AZ</div>
+          <div class="badge">Professional team manager & leadership coach</div>
+          <div class="badge">Specializes in men's confidence & identity</div>
+          <div class="badge">Integrates physical discipline into mental growth</div>
+          <div class="badge">Results-focused, no-fluff coaching style</div>
+        </div>
+      </div>
+      <div class="about-right">
+        <p>I've spent years watching men — talented, intelligent, capable men — stay trapped in a version of themselves that doesn't match who they're meant to be. I've seen it on the mats. I've seen it in the workplace. And I've coached men through both.</p>
+        <p>What I've learned is this: <strong>confidence is a skill.</strong> Presence is a skill. The ability to walk into a room, hold your head up, and engage the world on your terms — it can be built. It takes discipline, honest feedback, and a structured system.</p>
+        <p>My approach is different because I don't just talk about mindset. I built a martial arts school. I've managed and developed professional teams. I've walked men through real-world challenges — physical, social, relational — and I've watched them come out the other side.</p>
+        <p><strong>If you're ready to do the work, I'm ready to build you.</strong></p>
+        <div class="about-quote">
+          <p>"The man you want to become is already inside you. My job is to remove everything that's been blocking him."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="section-inner">
+    <div class="section-label">Invest In Yourself</div>
+    <h2 class="section-title">Choose Your <em>Transformation</em></h2>
+    <p class="section-sub">Every program includes 1-on-1 coaching directly with Michael. No group sessions. No templates. Just focused, personalized work on you.</p>
+    <div class="programs-grid">
+
+      <div class="program-card">
+        <div class="program-duration">Foundation · 4 Weeks</div>
+        <div class="program-name">The Spark</div>
+        <div class="program-price">$497 <span>/ one-time</span></div>
+        <div class="program-desc">A fast, focused jumpstart. Identify your core blocks, set direction, and take your first major steps toward the man you're becoming.</div>
+        <ul class="program-features">
+          <li>4 x 60-min 1:1 coaching sessions</li>
+          <li>Personal confidence assessment</li>
+          <li>Custom 30-day action plan</li>
+          <li>WhatsApp check-in support</li>
+          <li>Identity & values workshop</li>
+        </ul>
+        <a href="#booking" class="btn-outline" style="width:100%;text-align:center;">Get Started</a>
+      </div>
+
+      <div class="program-card program-featured">
+        <div class="featured-tag">Most Popular</div>
+        <div class="program-duration">Core Transformation · 3 Months</div>
+        <div class="program-name">The Blueprint</div>
+        <div class="program-price">$1,497 <span>/ program</span></div>
+        <div class="program-desc">The signature program. 90 days of deep, structured transformation — confidence, body, relationships, and social presence all addressed together.</div>
+        <ul class="program-features">
+          <li>12 x 60-min 1:1 coaching sessions</li>
+          <li>Weekly written accountability</li>
+          <li>Social skills & body language training</li>
+          <li>Physical discipline integration plan</li>
+          <li>Relationship readiness module</li>
+          <li>Full access between sessions via WhatsApp</li>
+        </ul>
+        <a href="#booking" class="btn-primary" style="width:100%;text-align:center;">Apply Now</a>
+      </div>
+
+      <div class="program-card">
+        <div class="program-duration">Full Rebuild · 6 Months</div>
+        <div class="program-name">The Architect</div>
+        <div class="program-price">$2,497 <span>/ program</span></div>
+        <div class="program-desc">For men who want total, lasting change. Six months to rebuild your identity, your presence, your body, and your relationships from the ground up.</div>
+        <ul class="program-features">
+          <li>24 x 60-min 1:1 coaching sessions</li>
+          <li>Full physical + mental integration plan</li>
+          <li>Unlimited WhatsApp access</li>
+          <li>Career & social advancement strategies</li>
+          <li>Relationship & dating confidence module</li>
+          <li>Martial arts mindset integration</li>
+          <li>Post-program alumni support (30 days)</li>
+        </ul>
+        <a href="#booking" class="btn-outline" style="width:100%;text-align:center;">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section id="transformation">
+  <div class="section-inner">
+    <div class="section-label">What Changes</div>
+    <h2 class="section-title">The Four Pillars Of <em>Your New Life</em></h2>
+    <div class="transform-grid">
+      <div class="transform-card">
+        <span class="transform-icon">🧠</span>
+        <h3>Confidence</h3>
+        <p>Stop second-guessing every word. Walk into rooms owning your presence. Say what you mean and mean what you say.</p>
+      </div>
+      <div class="transform-card">
+        <span class="transform-icon">💪</span>
+        <h3>Physical Identity</h3>
+        <p>Build the discipline of a martial artist. Your body is the first signal you send. Make it match who you are inside.</p>
+      </div>
+      <div class="transform-card">
+        <span class="transform-icon">❤️</span>
+        <h3>Relationships</h3>
+        <p>Stop waiting for permission to pursue what you want. Build the social skills, attraction, and emotional intelligence to connect.</p>
+      </div>
+      <div class="transform-card">
+        <span class="transform-icon">🎯</span>
+        <h3>Purpose</h3>
+        <p>Stop drifting through life. Define who you are, what you stand for, and build every decision around that foundation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-label">Social Proof</div>
+    <h2 class="section-title">Men Who <em>Took The Step</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"I was 27 and had never been in a relationship. Three months with Michael and I have a completely different relationship with myself — and I'm now dating someone incredible."</div>
+        <div class="testi-author"><strong>— J.R., 28 · Phoenix, AZ</strong>The Blueprint Program</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"I used to dread every social event. Now I actually look forward to them. Michael doesn't just coach — he challenges you in ways that feel uncomfortable but necessary."</div>
+        <div class="testi-author"><strong>— D.T., 33 · Chandler, AZ</strong>The Architect Program</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"I got a promotion two months into the program. Not because Michael taught me career skills — but because he taught me to stop shrinking. People noticed. My boss noticed."</div>
+        <div class="testi-author"><strong>— M.K., 31 · Gilbert, AZ</strong>The Blueprint Program</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FUNNEL -->
+<section id="booking">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom:0;">
+      <div class="section-label" style="justify-content:center;">Take Action Now</div>
+      <h2 class="section-title">Book Your Free <em>Strategy Call</em></h2>
+      <p class="section-sub" style="margin:0.5rem auto 0; text-align:center;">30 minutes. No pitch, no pressure. Just an honest conversation about where you are and where you want to be.</p>
+    </div>
+    <div class="booking-wrapper">
+      <div class="steps-bar">
+        <div class="step-item">
+          <div class="step-circle active" id="scircle-1">1</div>
+          <div class="step-label">About You</div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle" id="scircle-2">2</div>
+          <div class="step-label">Your Goals</div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle" id="scircle-3">3</div>
+          <div class="step-label">Choose Program</div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle" id="scircle-4">4</div>
+          <div class="step-label">Schedule</div>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="funnel-step active" id="step-1">
+        <h2>Tell Me About Yourself</h2>
+        <p>Let's start with the basics so Michael can prepare for your call.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="f-fname" placeholder="Your first name">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="f-lname" placeholder="Your last name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="f-email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Phone (optional)</label>
+            <input type="tel" id="f-phone" placeholder="(480) 000-0000">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Age</label>
+            <select id="f-age">
+              <option value="">Select...</option>
+              <option>21–25</option>
+              <option>26–30</option>
+              <option>31–35</option>
+              <option>36–40</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="f-location" placeholder="City, State">
+          </div>
+        </div>
+        <button class="btn-primary" onclick="goStep(2)">Next Step →</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="funnel-step" id="step-2">
+        <h2>What Brings You Here?</h2>
+        <p>Be honest — this is the first step to something real.</p>
+        <div class="form-group">
+          <label>What is your #1 challenge right now?</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="challenge" value="Confidence & self-esteem"> <span class="radio-option-label">Confidence & self-esteem</span></label>
+            <label class="radio-option"><input type="radio" name="challenge" value="Social skills & relationships"> <span class="radio-option-label">Social skills & relationships</span></label>
+            <label class="radio-option"><input type="radio" name="challenge" value="Dating & romantic relationships"> <span class="radio-option-label">Dating & romantic relationships</span></label>
+            <label class="radio-option"><input type="radio" name="challenge" value="Career & professional presence"> <span class="radio-option-label">Career & professional presence</span></label>
+            <label class="radio-option"><input type="radio" name="challenge" value="Physical discipline & identity"> <span class="radio-option-label">Physical discipline & identity</span></label>
+            <label class="radio-option"><input type="radio" name="challenge" value="Overall purpose & direction"> <span class="radio-option-label">Overall purpose & direction</span></label>
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:1rem;">
+          <label>In one sentence, what would your life look like if this was solved?</label>
+          <textarea id="f-vision" rows="3" placeholder="e.g. I'd walk into any room with confidence and finally pursue what I actually want..."></textarea>
+        </div>
+        <div style="display:flex;gap:1rem;">
+          <button class="btn-outline" onclick="goStep(1)">← Back</button>
+          <button class="btn-primary" onclick="goStep(3)">Next Step →</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="funnel-step" id="step-3">
+        <h2>Choose Your Program</h2>
+        <p>Pick the investment level that matches your commitment. We'll confirm on the call.</p>
+        <div class="radio-group" style="margin-bottom:1.5rem;">
+          <label class="radio-option"><input type="radio" name="program" value="The Spark (4 weeks - $497)"> <span class="radio-option-label">The Spark — 4 Weeks</span> <span class="radio-option-price">$497</span></label>
+          <label class="radio-option"><input type="radio" name="program" value="The Blueprint (3 months - $1,497)" checked> <span class="radio-option-label">The Blueprint — 3 Months ⭐ Most Popular</span> <span class="radio-option-price">$1,497</span></label>
+          <label class="radio-option"><input type="radio" name="program" value="The Architect (6 months - $2,497)"> <span class="radio-option-label">The Architect — 6 Months</span> <span class="radio-option-price">$2,497</span></label>
+          <label class="radio-option"><input type="radio" name="program" value="Not sure yet - discuss on call"> <span class="radio-option-label">Not sure yet — let's discuss on the call</span> <span class="radio-option-price">Free</span></label>
+        </div>
+        <div style="display:flex;gap:1rem;">
+          <button class="btn-outline" onclick="goStep(2)">← Back</button>
+          <button class="btn-primary" onclick="goStep(4)">Next Step →</button>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="funnel-step" id="step-4">
+        <h2>Schedule Your Call</h2>
+        <p>Select your preferred day and time. Michael personally hosts every call.</p>
+        <div class="confirm-box" id="confirm-summary">
+          <h3>Your Application Summary</h3>
+          <div class="confirm-row"><span>Name</span><span id="c-name">—</span></div>
+          <div class="confirm-row"><span>Email</span><span id="c-email">—</span></div>
+          <div class="confirm-row"><span>Program Interest</span><span id="c-program">—</span></div>
+          <div class="confirm-row"><span>Primary Challenge</span><span id="c-challenge">—</span></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Day</label>
+            <select id="f-day">
+              <option value="">Select a day...</option>
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Time (AZ / MST)</label>
+            <select id="f-time">
+              <option value="">Select a time...</option>
+              <option>8:00 AM</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>5:00 PM</option>
+              <option>6:00 PM</option>
+              <option>7:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;">
+          <button class="btn-outline" onclick="goStep(3)">← Back</button>
+          <button class="btn-primary" onclick="submitBooking()">Confirm My Spot ✓</button>
+        </div>
+      </div>
+
+      <!-- Step 5 - Success -->
+      <div class="funnel-step" id="step-5">
+        <div class="success-box">
+          <div class="success-icon">🎯</div>
+          <h2>You're Booked. Let's Build.</h2>
+          <p>Michael will personally reach out within 24 hours to confirm your call. Check your email — a confirmation is on its way.</p>
+          <p style="margin-bottom:2rem;">This is the moment most men keep putting off. You didn't. That already says something.</p>
+          <a href="#programs" class="btn-primary">Review Your Program Options</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">Frequently <em>Asked</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Is this coaching in-person or online? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer">Both options are available. Local clients in the San Tan Valley / East Valley area can meet in person. Clients outside the area work with Michael via Zoom with the same level of intensity and accountability.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">I've tried therapy and self-help books. How is this different? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer">Therapy looks backward. This coaching looks forward. We don't process trauma for months — we build new behavior, new habits, and new identity through action. The martial arts approach means you're tested, challenged, and held accountable in real time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">I'm very introverted and shy. Is this program right for me? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer">Yes — this was built for you. Being introverted is not a flaw, but letting fear run your life is a choice you can change. We work at your pace with structured, measurable steps so you never feel thrown in the deep end.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What if I'm not ready to commit to a full program yet? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer">The free strategy call is for exactly this reason. No commitment, no sales pressure — just 30 minutes to see if it's the right fit. "Not ready" is often the feeling that means you're exactly ready.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need any martial arts experience? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer">Absolutely not. The martial arts background informs Michael's coaching philosophy — discipline, resilience, presence — but you'll never be asked to spar or step on a mat (unless you want to).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How many clients does Michael take at one time? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer">To maintain quality, Michael works with no more than 8 active coaching clients at a time. Spots are limited. When the calendar shows availability, it's real — act fast.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section id="cta-banner">
+  <div class="section-label" style="justify-content:center;">Limited Spots</div>
+  <h2 class="section-title">The Man You Want To Be<br><em>Is Waiting On You</em></h2>
+  <p class="section-sub">Michael works with a maximum of 8 clients at a time. When those spots are full, the waitlist begins. Book your free call now — before someone else takes your spot.</p>
+  <a href="#booking" class="btn-primary">Book My Free Strategy Call</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Michael.<span>CoachME</span></div>
+  <p>Life Coaching for Men · San Tan Valley, AZ 85143</p>
+  <p>Serving the entire East Valley & coaching online nationwide</p>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#booking">Book a Call</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <p style="margin-top:1rem; font-size:0.75rem;">© 2025 Michael Evangelista · Michael.CoachME · All rights reserved</p>
+</footer>
+
+<!-- POPUP LEAD MAGNET -->
+<div class="popup-overlay" id="leadPopup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <div class="popup-tag">Free Resource · No Cost</div>
+    <div class="popup-title">Get The "5 Shifts" Guide</div>
+    <p class="popup-sub">The 5 mindset shifts that take men from invisible to unstoppable — the same framework Michael uses in his coaching. Free, instantly delivered.</p>
+    <div class="popup-input-row">
+      <input type="email" id="popup-email" placeholder="Enter your email">
+      <button onclick="claimGuide()">Claim It Free</button>
+    </div>
+    <div class="popup-disclaimer">No spam. Unsubscribe anytime. Your info is never shared.</div>
+  </div>
+</div>
+
+<script>
+  // Show popup after 12 seconds
+  setTimeout(function() {
+    if (!localStorage.getItem('popupDismissed')) {
+      document.getElementById('leadPopup').classList.add('show');
+    }
+  }, 12000);
+
+  function closePopup() {
+    document.getElementById('leadPopup').classList.remove('show');
+    localStorage.setItem('popupDismissed', 'true');
+  }
+
+  function claimGuide() {
+    var email = document.getElementById('popup-email').value;
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    document.querySelector('.popup-box').innerHTML = '<div style="text-align:center;padding:2rem 0;"><div style="font-size:2.5rem;margin-bottom:1rem;">📩</div><div style="font-family:Bebas Neue,sans-serif;font-size:1.6rem;color:#C8943A;margin-bottom:0.5rem;">Check Your Inbox</div><p style="color:#8a8a8a;font-size:0.9rem;">The guide is on its way to ' + email + '</p></div>';
+    localStorage.setItem('popupDismissed', 'true');
+    setTimeout(closePopup, 3000);
+  }
+
+  // Funnel
+  function goStep(n) {
+    if (n === 4) {
+      document.getElementById('c-name').textContent =
+        (document.getElementById('f-fname').value || '—') + ' ' +
+        (document.getElementById('f-lname').value || '');
+      document.getElementById('c-email').textContent = document.getElementById('f-email').value || '—';
+      var prog = document.querySelector('input[name="program"]:checked');
+      document.getElementById('c-program').textContent = prog ? prog.value : '—';
+      var chal = document.querySelector('input[name="challenge"]:checked');
+      document.getElementById('c-challenge').textContent = chal ? chal.value : '—';
+    }
+    for (var i = 1; i <= 5; i++) {
+      var s = document.getElementById('step-' + i);
+      if (s) s.classList.toggle('active', i === n);
+      var c = document.getElementById('scircle-' + i);
+      if (c) {
+        c.classList.remove('active', 'done');
+        if (i === n) c.classList.add('active');
+        else if (i < n) c.classList.add('done');
+      }
+    }
+    document.getElementById('booking').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function submitBooking() {
+    goStep(5);
+  }
+
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
